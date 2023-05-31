@@ -1,24 +1,8 @@
 #!/usr/bin/env python3
 
 import tkinter as tk
-import sqlalchemy
-import time
-import imghdr
-from PIL import Image, ImageTk
 from tkinter import filedialog
 
-def select_image():
-    file = filedialog.askopenfilename(
-        title='Select image',
-        filetypes=(("Image files", "*.jpg;*.jpeg;*.png"), ("All files", "*.*"))
-    )
-
-    image = Image.open(file)
-    photo = ImageTk.PhotoImage(image)
-
-    label = tk.Label(center_frame, image=photo)
-    label.image = photo
-    label.pack()
 
 window = tk.Tk()
 
@@ -60,10 +44,6 @@ right_frame = tk.Frame(
     bg='light gray',
     width=250,
 )
-
-button = tk.Button(left_frame, text="Go", command=select_image)
-
-button.pack(fill=tk.X)
 
 # Pack the frames
 left_frame.pack(side=tk.LEFT, fill=tk.Y)
