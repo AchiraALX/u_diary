@@ -49,8 +49,7 @@ class Add:
 
         obj = self.unpack_and_save(
             details=details,
-            model=Entry,
-            special=['author_info']
+            model=Entry
         )
 
         return obj
@@ -113,6 +112,7 @@ class Add:
     ):
         """Saves the given data to the database
         """
+        self.failed = []
         if details is None:
             return {
                 'error': "Dictionary empty."
@@ -228,4 +228,4 @@ class Add:
 
 if __name__ == "__main__":
     db = Add()
-    print(db.add_comment())
+    print(db.add_entry())

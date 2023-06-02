@@ -211,8 +211,5 @@ def main(query: str = None) -> dict:
 
 
 if __name__ == "__main__":
-    data = main('users')
-
-    for user in data['users']:
-        if user['username'] == 'achira':
-            print(user['comments'])
+    data = main('entries')
+    print(data)
