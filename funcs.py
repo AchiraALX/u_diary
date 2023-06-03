@@ -57,8 +57,9 @@ def add_user():
                 title="Success",
                 message=f"{username} added successfully",
             )
-            form_dialog.destroy()
             op.push("add_user_status", True)
+            form_dialog.destroy()
+            return
 
         else:
             messagebox.showerror(
@@ -66,7 +67,12 @@ def add_user():
                 message="Something went wrong"
             )
 
+
             op.push("add_user_status", False)
+
+        form_dialog.destroy()
+        add_user()
+        form_dialog.destroy()
 
 
 
